@@ -1,0 +1,31 @@
+.tooltip
+  &-container
+    position: relative
+    display: inline-block
+  &-content
+    width: 200px
+    background-color: #ffffff
+    color: #E12928
+    border: 1px solid #E12928
+    padding: 8px
+    font-size: 14px
+    border-radius: 8px
+    //z-index: 80
+    &.top
+      bottom: 100%
+    &.bottom
+      top: 100%
+    &-child
+      margin-top: 6px
+  &-arrow
+    border-width: 5px
+    border-style: solid
+    transform: translateX(-50%)
+    &.top
+      top: 100%
+      border-color: #E12928 transparent transparent transparent
+    &.bottom
+      bottom: 100%
+      border-color: transparent transparent #E12928 transparent
+
+

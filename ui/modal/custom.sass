@@ -1,0 +1,65 @@
+.bg
+  position: fixed
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: rgba(0, 0, 0, .3)
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100%
+  height: 100%
+  z-index: 1000
+
+.modal, .modal-ps
+  max-width: 48%
+  position: relative
+  background-color: #ffffff
+  padding: 75px 70px
+  transition: height ease-in-out .3s
+  border-radius: 0
+  &-header
+    &-close
+      position: absolute
+      padding: 25px
+      top: 0
+      right: 0
+    .title
+      font-weight: bold
+      font-size: 36px
+    .sub-title
+      font-size: 16px
+
+
+@media (min-width: 0) and (max-width: 960px)
+  .modal, .modal-ps
+    max-width: 60%
+    padding: 100px 60px
+    &-header
+      &-close
+        padding: 25px
+      .title
+        font-size: 34px
+      .sub-title
+
+@media (min-width: 0) and (max-width: 640px)
+  .modal, .modal-ps
+    max-width: 90%
+    padding: 100px 30px
+    &-header
+      &-close
+        padding: 25px
+      .title
+        font-size: 30px
+      .sub-title
+
+@media (min-width: 0) and (max-width: 320px)
+  .modal, .modal-ps
+    padding: 50px 20px
+    &-header
+      &-close
+        padding: 25px
+      .title
+        font-size: 26px
+      .sub-title

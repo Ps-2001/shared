@@ -1,0 +1,8 @@
+export { default as IconDate } from './icon-date.vue'
+export { default as IconDateTime } from './icon-date-time.vue'
+export { default as IconArrow } from './icon-arrow.vue'
+export { default as IconArrowLeft } from './icon-arrow-left.vue'
+export { default as IconArrowRight } from './icon-arrow-right.vue'
+export { default as IconCheckMark } from './icon-check-mark.vue'
+export { default as IconPlus } from './icon-plus.vue'
+export { default as IconClose } from './icon-close.vue'

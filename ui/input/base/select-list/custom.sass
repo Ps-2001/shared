@@ -1,0 +1,45 @@
+.base-input
+  &-title
+    display: flex
+    &-name
+      margin-bottom: .33rem
+    &-required
+      margin-left: .3rem
+      color: #e30000
+
+  .select-label
+    background-color: white
+    border: 1px solid #e6e6e7
+    &:hover
+      border: 1px solid #bcbcbe
+    &:focus
+      border: 1px solid #188787
+    &:disabled
+      background-color: #F7F7F7
+      border: 1px solid transparent
+      color: #9F9F9F
+
+
+.select-label
+  padding: 8px 14px
+  border-radius: 2px
+  //.text
+  //  white-space: nowrap
+.base-input-title
+  font-size: 16px
+
+@media (min-width: 640px) and (max-width: 960px)
+  .base-input-title
+    font-size: 16px
+
+
+@media (min-width: 320px) and (max-width: 640px)
+  .base-input-title
+    font-size: 14px
+
+
+@media (min-width: 280px) and (max-width: 320px)
+  .select-label
+    padding: 6px 10px
+  .base-input-title
+    font-size: 12px

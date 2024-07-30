@@ -1,0 +1,34 @@
+.base-input
+  .textarea
+    padding: 8px 14px
+    border-radius: 2px
+    &:hover
+      border: 1px solid #bcbcbe
+    &:focus
+      border: 1px solid  #188787
+
+    &:disabled
+      background-color: #F7F7F7
+      pointer-events: none
+      border: 1px solid #e6e6e7 !important
+      color: #9F9F9F
+
+.base-input-title
+  font-size: 16px
+
+@media (min-width: 640px) and (max-width: 960px)
+  .base-input-title
+    font-size: 16px
+
+
+@media (min-width: 320px) and (max-width: 640px)
+  .base-input-title
+    font-size: 14px
+
+
+@media (min-width: 280px) and (max-width: 320px)
+  .textarea
+    padding: 6px 10px
+    border-radius: 2px
+  .base-input-title
+    font-size: 12px

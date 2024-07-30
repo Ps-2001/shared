@@ -1,0 +1,5 @@
+export { default as Input } from './input/input.vue'
+export { default as SelectList } from './select-list/select-list.vue'
+export { default as Checkbox } from './checkbox/checkbox.vue'
+export { default as Textarea } from './Multiline-text/big-input.vue'
+export { default as DateCustom } from './date/date.vue'

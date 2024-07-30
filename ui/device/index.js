@@ -1,0 +1,1 @@
+export { default as SlotDev } from './slotDev.vue'

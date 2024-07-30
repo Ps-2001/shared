@@ -1,0 +1,46 @@
+.header
+  .tabs
+    font-size: 14px
+    padding: 0
+    & li
+
+  &-add
+    display: flex
+
+  .arrow
+    padding: 0 12px
+
+.tab-content
+  padding: 30px 50px 5px
+  &-add
+    display: none
+
+@media (min-width: 0) and (max-width: 960px)
+  .tab-content
+    padding: 30px 50px 5px
+    &-add
+      display: none
+
+
+@media (min-width: 0) and (max-width: 640px)
+  .header
+    justify-content: center
+    margin-bottom: .6rem
+    .tabs
+      max-width: 80%
+      .tab
+        padding: 10px 12px
+        border-radius: 8px
+    &-add
+      display: none
+
+  .tab-content
+    padding: 41px 30px 5px
+    &-add
+      display: flex
+
+
+@media (min-width: 0) and (max-width: 320px)
+  .tab-content
+    padding: 41px 30px 2px
+

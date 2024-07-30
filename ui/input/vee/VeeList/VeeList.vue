@@ -1,0 +1,79 @@
+<template>
+  <SelectList
+      :id="field?.id"
+      :key="field?.id"
+      :label="field?.label"
+      :type="field?.type"
+      :placeholder="field?.placeholder"
+      :disabled="field?.disabled"
+      :required="field?.required"
+      :notification="notificationMessage"
+      :list="field?.specialized?.list || list"
+      :multiple="field?.specialized?.multiple || multiple"
+      v-model="localValue"
+  />
+</template>
+
+<script setup>
+import {ref, reactive, watch, watchEffect,onMounted, toRefs} from "vue";
+import { SelectList } from "@/shared/ui/input";
+import { FIELDS_PATTERNS } from "@/shared/config";
+
+const props = defineProps(['field', 'modelValue', 'list', 'multiple'])
+const emit = defineEmits(['setValid'])
+
+const { field, modelValue } = toRefs(props);
+const localValue = ref(modelValue.value || field.value.value);
+const isValid = ref(false);
+const pattern = ref(FIELDS_PATTERNS);
+const defaultType = ref('list');
+let notificationMessage = reactive({});
+
+watch(modelValue, newValue => localValue.value = newValue)
+
+watch(localValue, newValue => !field ? emit('update:modelValue', newValue) : field.value.value = newValue)
+
+const validate = value => {
+
+  if (props.field?.required && !value) {
+    // Поле обязательно для заполнения, но пустое
+    isValid.value = false;
+    notificationMessage.type = 'error'
+    notificationMessage.text = 'Это поле обязательно для заполнения'
+
+  }
+  else if (!props.field?.required && !value || (pattern.value[props.field?.type || defaultType] && pattern.value[props.field?.type || defaultType].test(value)) ) {
+    // Поле не обязательное или заполненное, и соответствует паттерну
+    isValid.value = true
+    notificationMessage.type = 'success'
+    notificationMessage.text = ''
+
+  } else if (pattern.value[props.field?.type || defaultType] && !pattern.value[props.field?.type || defaultType].test(value)) {
+    // Поле заполнено, но не соответствует паттерну
+    isValid.value = false;
+
+    props.field?.validateText
+        ? (notificationMessage.type = 'error', notificationMessage.text = props.field?.validateText)
+        : (notificationMessage.type = 'error', notificationMessage.text = 'поле заполнено неправильно')
+
+  } else {
+    // Поле либо не обязательно, либо заполнено правильно
+    isValid.value = true
+    notificationMessage.type = 'success'
+    notificationMessage.text = ''
+
+  }
+
+  emit('setValid', { id: props.field?.id, valid: isValid.value })
+
+}
+
+watch(localValue, () => {
+  validate(localValue.value)
+}, { immediate: true })
+
+</script>
+
+<style scoped>
+
+</style>
