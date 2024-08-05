@@ -1,5 +1,3 @@
-.idea
-
 # Игнорировать каталог в любом месте
 node_modules/
 
@@ -11,3 +9,12 @@ node_modules/
 
 # Игнорировать файл с окончанием
 .env
+.gitkeep
+
+# Игнорировать файл с конфигурациями IDE
+.idea
+phpstorm.config.js
+
+dist
+dist-ssr
+*.local
