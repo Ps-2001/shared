@@ -1,7 +1,7 @@
 <template>
   <Flex
     direction="row"
-    v-bind:props
+    v-bind="props"
   >
     <slot></slot>
   </Flex>

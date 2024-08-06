@@ -1,5 +1,6 @@
 <template>
   <div :class="classes">
+    {{ props }}
     <slot></slot>
   </div>
 </template>
@@ -11,7 +12,7 @@ const props = defineProps({
   max: Boolean,
   direction: String,
   wrap: String,
-  gap: Number,
+  gap: [Number, String],
 })
 const { max, direction, wrap, gap } = toRefs(props)
 
