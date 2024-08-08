@@ -1,4 +1,4 @@
-import { DESKTOPS, MOBILES, GAME_CONSOLES } from "@/shared/config";
+import { DESKTOPS, MOBILES, GAME_CONSOLES } from "@/shared/config/regex"
 
 /**
  * Проверяет, является ли текущее устройство ПК.
