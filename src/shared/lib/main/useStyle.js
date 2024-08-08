@@ -1,5 +1,5 @@
 import { Type } from "@/shared/lib/main/useTypes.js"
-import { layoutSpacingRegex } from "@/shared/config/regex/styles.js"
+import {inlineTagsRegex, layoutSpacingRegex} from "@/shared/config/regex/styles.js"
 
 /**
  * Получить строку CSS для padding
@@ -52,4 +52,23 @@ export const getMargin = (margin) => {
 
     return res
 
+}
+
+/**
+ * Проверяет, является ли указанный тег строчным (inline).
+ *
+ * Эта функция использует регулярное выражение для проверки,
+ * содержится ли тег в списке разрешенных строчных тегов.
+ *
+ * @param {string} tag - Тег, который необходимо проверить.
+ * @returns {boolean} Возвращает true, если тег является строчным,
+ *                   в противном случае возвращает false.
+ *
+ * @example
+ * isInlineTag('span'); // true
+ * isInlineTag('div');  // false
+ * isInlineTag('B');    // true
+ */
+export const isInlineTag = (tag) => {
+    return inlineTagsRegex.test(tag)
 }
