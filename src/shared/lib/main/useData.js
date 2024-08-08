@@ -1,4 +1,4 @@
-import { Type } from "@/shared/lib/useTypes.js"
+import { Type } from "@/shared/lib/main/useTypes.js"
 
 /**
  * Возвращает массив из указанного диапазона (промежутка) индексов.

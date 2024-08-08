@@ -6,7 +6,7 @@
  * @param {string} [params.separator='...'] - Строка, добавляемая в конец сокращенного текста.
  * @returns {string} Сокращенный текст с сепаратором или исходный текст, если его длина меньше указанной.
  */
-import {Type} from "./useTypes"
+import { Type } from "./useTypes"
 
 export const reduction = (text = '', length = 15, separator = '...') => {
 
@@ -30,19 +30,19 @@ export const upperFirstLetter = (text) => {
 
 /**
  * Генерирует случайный набор символов с заданными префиксом и суффиксом.
- * @param {Object} params - Параметры функции.
- * @param {string} [params.start=''] - Начло результата.
- * @param {string} [params.end=''] - Окончание результата.
- * @param {number} [params.length=16] - Количество случайных символов в середине строки.
+ * @param {number} [length=16] - Количество случайных символов в середине строки.
+ * @param {Object} [options={}] - Дополнительные параметры.
+ * @param {string} [options.start=''] - Начало результата.
+ * @param {string} [options.end=''] - Окончание результата.
  * @returns {string} Строка, состоящая из префикса, случайных символов и суффикса.
  */
-export const randomText = ({ start = '', end = '', length = 16 }) => {
-
-  const chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+export const randomText = (length = 16, { start = '', end = '' } = {}) => {
+  const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
   let result = ''
 
-  for (let i = 0; i < length; i++)
-    result += chars[Math.floor(Math.random() * chars.length)]
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length))
+  }
 
   return `${start}${result}${end}`
 }

@@ -1,5 +1,4 @@
-import { LOCALIZATION } from "@/config/base"
-import { isInRange } from "@/shared/lib/useFunctional.js"
+import { LOCALIZATION } from "@/shared/config/base"
 
 /**
  * Проверяет и возвращает корректную дату.

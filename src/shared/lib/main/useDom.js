@@ -1,8 +1,4 @@
-// Изменить значение поля ввода
-// selector - class или id
-// value - значение
-
-import { Type } from "@/shared/lib/useTypes.js"
+import { Type } from "@/shared/lib/main/useTypes.js"
 
 /**
  * Изменяет значение поля ввода на заданное
@@ -25,12 +21,12 @@ export const changeInputValue = (selector, value) => {
 }
 
 /**
- * Прокручивает содержимое элемента в заданной ориентации
- * @param {Object} params - Параметры функции.
- * @param {HTMLElement} params.elem - Элемент, содержимое которого нужно прокрутить.
- * @param {string} params.orin - Ориентация прокрутки ('gor' - горизонтально, 'ver' - вертикально).
- * @param {number} [params.value=0] - Значение прокрутки.
- * @param {boolean} [params.smooth=false] - Плавность прокрутки.
+ * Прокручивает содержимое элемента в заданной ориентации.
+ * @param {HTMLElement} elem - Элемент, содержимое которого нужно прокрутить.
+ * @param {number} [value=0] - Значение прокрутки.
+ * @param {Object} [options={}] - Дополнительные параметры.
+ * @param {string} [options.orin='gor'] - Ориентация прокрутки ('gor' - горизонтально, 'ver' - вертикально).
+ * @param {boolean} [options.smooth=false] - Указывает, использовать ли плавную прокрутку.
  */
 export const elemScroll = (elem, value = 0, options = {}) => {
 
@@ -53,9 +49,9 @@ export const elemScroll = (elem, value = 0, options = {}) => {
 
 /**
  * Прокручивает страницу к заданному элементу.
- * @param {Object} params - Параметры функции.
- * @param {HTMLElement} params.elem - Элемент, к которому нужно прокрутить страницу.
- * @param {boolean} [params.smooth] - Плавность прокрутки.
+ * @param {HTMLElement} elem - Элемент, к которому нужно прокрутить страницу.
+ * @param {Object} [options={}] - Дополнительные параметры.
+ * @param {boolean} [options.smooth=true] - Указывает, использовать ли плавную прокрутку.
  */
 export const scrollToElem = (elem,  options = {}) => {
 
