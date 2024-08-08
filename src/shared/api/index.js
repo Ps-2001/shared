@@ -1,5 +1,5 @@
 import axios from "axios"
-import { API_URL } from "@/shared/api/index.js"
+import { API_URL } from "@/shared/config/api"
 
 export const api = async payload => {
 
