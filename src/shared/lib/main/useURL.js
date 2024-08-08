@@ -1,8 +1,7 @@
 /**
  * Добавляет или обновляет query параметр в URL без перезагрузки страницы.
- * @param {Object} params - Параметры функции.
- * @param {string} params.name - Имя - ключ query-параметра.
- * @param {string} params.value - Значение query параметра.
+ * @param {string} name - Имя - ключ query-параметра.
+ * @param {string} value - Значение query параметра.
  */
 export const setQueryParam = (name, value ) => {
 
@@ -16,8 +15,7 @@ export const setQueryParam = (name, value ) => {
 
 /**
  * Получает значение query параметра из URL.
- * @param {Object} params - Параметры функции.
- * @param {string} params.key - Название параметра, значение которого нужно получить.
+ * @param {string} key - Название параметра, значение которого нужно получить.
  * @returns {string|null} Возвращает значение параметра, если оно существует, иначе null.
  */
 export const getQueryParam = (key) => {
@@ -30,6 +28,20 @@ export const getQueryParam = (key) => {
 }
 
 /**
+ * Получает значение query параметра из URL.
+ * @param {string} key - Название параметра, значение которого нужно получить.
+ */
+export const deleteQueryParam = (key) => {
+
+  if (!key) return null
+
+  const url = new URL(window.location);
+  url.searchParams.delete(key);
+  window.history.pushState({}, '', url);
+
+}
+
+/**
  * Перезагружает текущую страницу.
  */
 export const reloadPage = () => {
@@ -38,13 +50,12 @@ export const reloadPage = () => {
 
 /**
  * Перенаправляет пользователя на указанный URL.
- * @param {Object} params - Параметры функции.
- * @param {string} params.url - Путь к сайту, на который нужно перенаправить пользователя.
+ * @param {string} url - Путь к сайту, на который нужно перенаправить пользователя.
  * @returns {boolean} Возвращает false, если URL не указан.
  */
 export const redirect = (url) => {
 
-  if (!url) return
+  if (!url) return false
 
   window.location.href = url
 
