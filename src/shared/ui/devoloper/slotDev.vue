@@ -1,12 +1,11 @@
 <template>
-  <slot v-if="isDev()">
+  <slot v-if="true">
 
   </slot>
 </template>
 
 <script setup>
 import {ref} from 'vue'
-import { isDev } from "@/shared/lib/useDevice.js"
 
 const props = defineProps([])
 

@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     class="day"
     :class="classNames"
     @click="emit('select', day)"
@@ -10,7 +10,7 @@
 
 <script setup>
 import {computed, watchEffect} from "vue";
-import {getDateMs, isDayWeekend} from "@/shared/lib/useDate.js";
+import {getDateMs, isDayWeekend} from "@/shared/lib/main/useDate.js";
 import {DAY, HOUR} from "@/shared/config/index.js";
 
 const props = defineProps([

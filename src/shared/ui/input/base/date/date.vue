@@ -53,7 +53,7 @@
 import datePicker from './date-picker.vue'
 import { IconDate } from "@/shared/ui/icons/index.js";
 import { computed, ref, toRef } from "vue";
-import { normalizeDate } from "@/shared/lib/useDate.js";
+import { normalizeDate } from "@/shared/lib/main/useDate.js";
 
 const props = defineProps({
   id: String,

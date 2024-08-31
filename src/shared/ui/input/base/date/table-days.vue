@@ -34,7 +34,7 @@
 
 <script setup>
 import { computed, ref, watchEffect} from "vue";
-import { nameDays, totalNum } from "@/shared/lib/useDate.js";
+import { nameDays, totalNum } from "@/shared/lib/main/useDate.js";
 import Day from './day.vue'
 
 const props = defineProps([

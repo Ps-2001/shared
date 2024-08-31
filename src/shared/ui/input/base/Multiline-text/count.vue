@@ -6,7 +6,7 @@
 
 <script setup>
 import {watchEffect} from "vue";
-import {reduction} from "@/shared/lib/useString.js";
+import {reduction} from "@/shared/lib/main/useString.js";
 
 const props = defineProps(['value', 'length', 'max'])
 const emit = defineEmits(['stop'])

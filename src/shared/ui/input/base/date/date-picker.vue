@@ -65,9 +65,9 @@ import {
   nameMonths,
   totalNum,
   normalizeDate, inDate, getBasic
-} from "@/shared/lib/useDate.js";
-import { upperFirstLetter } from "@/shared/lib/useString.js";
-import {isMobileDevice, toggleFullScreen} from "@/shared/lib/useDevice.js";
+} from "@/shared/lib/main/useDate.js";
+import { upperFirstLetter } from "@/shared/lib/main/useString.js";
+import {isMobileDevice, toggleFullScreen} from "@/shared/lib/main/useDevice.js";
 import {MOBILES} from "@/shared/config/index.js";
 
 const props = defineProps(['isSearch', 'isToday', 'isTomorrow', 'min', 'max', 'arDisabled', 'disabledWeekDays', 'disabledWeekEnd', 'value'])
