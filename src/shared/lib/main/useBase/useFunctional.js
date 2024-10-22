@@ -26,3 +26,27 @@ export const pipe = () => {
 export const curry = () => {
 
 }
+
+
+/**
+ * Создает задержку (остановку) скрипта на указанное количество миллисекунд
+ *
+ * @param {number} ms - Время задержки (мс.)
+ * @returns {Promise<unknown>} Промис
+ *
+ * @example
+ * const get = async () => {
+ *     console.log('Начало работы')
+ *     await delay(2000)
+ *     console.log('Прошло 2 секунды')
+ * }
+ *
+ * get()
+ */
+export const delay = ms => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve()
+        }, ms)
+    })
+}
