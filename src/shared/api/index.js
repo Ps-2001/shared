@@ -21,13 +21,11 @@ export const api = async payload => {
             address = API_URL
         }
 
-        const res = await axios({ ...payload, url: address }).result
+        const res = await axios({ ...payload, url: address })
 
-        devLog({ res })
+        if (res.status > 299) throw new Error(`API request failed with status ${res.status}`)
 
-        if (!res.ok) throw new Error(`API request failed with status ${res.status}`)
-
-        return res
+        return res.data
 
     } catch (error) {
 
