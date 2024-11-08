@@ -1,6 +1,6 @@
 <template>
   <Flex
-      direction="col"
+      direction="row"
       v-bind="props"
       :style="style"
   >

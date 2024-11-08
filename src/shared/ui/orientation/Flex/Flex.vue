@@ -1,6 +1,5 @@
 <template>
   <div :class="classes">
-    {{ props }}
     <slot></slot>
   </div>
 </template>
