@@ -9,7 +9,7 @@ export const getEnvVariable = (key) => {
     const name = `${key}`
 
     if (import.meta.env[name] === undefined) {
-        throw new Error(`Переменная окружения ${name} не найдена`)
+        console.warn(`Переменная окружения ${name} не найдена`)
     }
 
     return import.meta.env[name]
